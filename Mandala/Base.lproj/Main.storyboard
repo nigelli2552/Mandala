@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,27 +13,28 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uta-TW-POr">
-                                <rect key="frame" x="0.0" y="786" width="393" height="66"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="m3i-Pw-S61">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="66"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-ZX-oJl">
+                                <rect key="frame" x="0.0" y="306" width="852" height="87"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lIV-zk-hiA">
+                                    <rect key="frame" x="0.0" y="0.0" width="852" height="87"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gP-KW-wzh">
-                                            <rect key="frame" x="8" y="8" width="377" height="50"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vT-Cc-Vbg">
+                                            <rect key="frame" x="67" y="8" width="718" height="50"/>
+                                            <color key="backgroundColor" red="0.30965709686279297" green="0.98428481817245483" blue="0.33547335863113403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="s3w-Yf-90Q"/>
+                                                <constraint firstAttribute="height" constant="50" id="6aa-b8-mhf"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="6gP-KW-wzh" secondAttribute="trailing" constant="8" id="4HC-CQ-bJA"/>
-                                        <constraint firstItem="6gP-KW-wzh" firstAttribute="leading" secondItem="m3i-Pw-S61" secondAttribute="leading" constant="8" id="A0J-al-Dqx"/>
-                                        <constraint firstItem="6gP-KW-wzh" firstAttribute="top" secondItem="m3i-Pw-S61" secondAttribute="top" constant="8" id="A1I-v4-0ih"/>
-                                        <constraint firstAttribute="bottom" secondItem="6gP-KW-wzh" secondAttribute="bottom" constant="8" id="XnT-bX-ZOC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8vT-Cc-Vbg" secondAttribute="bottom" id="CUG-ON-106"/>
+                                        <constraint firstItem="8vT-Cc-Vbg" firstAttribute="top" secondItem="lIV-zk-hiA" secondAttribute="top" constant="8" id="a9q-Fj-WmP"/>
+                                        <constraint firstItem="8vT-Cc-Vbg" firstAttribute="leading" secondItem="lIV-zk-hiA" secondAttribute="leadingMargin" id="foU-sA-f7m"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8vT-Cc-Vbg" secondAttribute="trailing" id="zrz-Wd-Dbh"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -42,9 +43,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="uta-TW-POr" secondAttribute="bottom" id="Fhg-WY-exc"/>
-                            <constraint firstItem="uta-TW-POr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ITz-bW-o5T"/>
-                            <constraint firstAttribute="trailing" secondItem="uta-TW-POr" secondAttribute="trailing" id="OpD-O7-R9f"/>
+                            <constraint firstItem="TCe-ZX-oJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A85-54-dKo"/>
+                            <constraint firstAttribute="bottom" secondItem="TCe-ZX-oJl" secondAttribute="bottom" id="XAp-3s-hup"/>
+                            <constraint firstAttribute="trailing" secondItem="TCe-ZX-oJl" secondAttribute="trailing" id="vFO-1S-ekA"/>
                         </constraints>
                     </view>
                 </viewController>
