@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="landscape" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-ZX-oJl">
-                                <rect key="frame" x="0.0" y="306" width="852" height="87"/>
+                                <rect key="frame" x="0.0" y="752" width="393" height="100"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lIV-zk-hiA">
-                                    <rect key="frame" x="0.0" y="0.0" width="852" height="87"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vT-Cc-Vbg">
-                                            <rect key="frame" x="67" y="8" width="718" height="50"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8vT-Cc-Vbg">
+                                            <rect key="frame" x="8" y="8" width="377" height="50"/>
                                             <color key="backgroundColor" red="0.30965709686279297" green="0.98428481817245483" blue="0.33547335863113403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="6aa-b8-mhf"/>
@@ -39,12 +39,22 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-MV-vwo">
+                                <rect key="frame" x="159" y="684" width="75" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5nl-LP-8JF"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TCe-ZX-oJl" firstAttribute="top" secondItem="ZUY-MV-vwo" secondAttribute="bottom" constant="20" id="6En-Mo-cpE"/>
                             <constraint firstItem="TCe-ZX-oJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A85-54-dKo"/>
                             <constraint firstAttribute="bottom" secondItem="TCe-ZX-oJl" secondAttribute="bottom" id="XAp-3s-hup"/>
+                            <constraint firstItem="ZUY-MV-vwo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKu-do-pFB"/>
                             <constraint firstAttribute="trailing" secondItem="TCe-ZX-oJl" secondAttribute="trailing" id="vFO-1S-ekA"/>
                         </constraints>
                     </view>
