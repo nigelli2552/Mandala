@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mood Selection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MoodSelectionViewController" customModule="Mandala" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,6 @@
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="8vT-Cc-Vbg">
                                             <rect key="frame" x="8" y="8" width="377" height="50"/>
-                                            <color key="backgroundColor" red="0.30965709686279297" green="0.98428481817245483" blue="0.33547335863113403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="6aa-b8-mhf"/>
                                             </constraints>
@@ -40,24 +39,31 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-MV-vwo">
-                                <rect key="frame" x="159" y="684" width="75" height="48"/>
+                                <rect key="frame" x="98.333333333333329" y="684" width="196.33333333333337" height="48"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="5nl-LP-8JF"/>
                                 </constraints>
+                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Mood"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TCe-ZX-oJl" firstAttribute="top" secondItem="ZUY-MV-vwo" secondAttribute="bottom" constant="20" id="6En-Mo-cpE"/>
+                            <constraint firstItem="ZUY-MV-vwo" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="9sK-hf-AG0"/>
                             <constraint firstItem="TCe-ZX-oJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A85-54-dKo"/>
                             <constraint firstAttribute="bottom" secondItem="TCe-ZX-oJl" secondAttribute="bottom" id="XAp-3s-hup"/>
                             <constraint firstItem="ZUY-MV-vwo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKu-do-pFB"/>
                             <constraint firstAttribute="trailing" secondItem="TCe-ZX-oJl" secondAttribute="trailing" id="vFO-1S-ekA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addMoodButton" destination="ZUY-MV-vwo" id="ufz-hO-ozo"/>
+                        <outlet property="stackView" destination="8vT-Cc-Vbg" id="3tz-vz-Q0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,6 +73,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
