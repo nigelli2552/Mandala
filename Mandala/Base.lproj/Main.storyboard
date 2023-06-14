@@ -16,6 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYr-fe-aSw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <connections>
+                                    <segue destination="NPR-EX-aIJ" kind="embed" identifier="embedContainerViewController" id="epL-jB-RmI"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-MV-vwo">
+                                <rect key="frame" x="98.333333333333329" y="684" width="196.33333333333337" height="48"/>
+                                <color key="backgroundColor" systemColor="systemMintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5nl-LP-8JF"/>
+                                </constraints>
+                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Mood"/>
+                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCe-ZX-oJl">
                                 <rect key="frame" x="0.0" y="752" width="393" height="100"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lIV-zk-hiA">
@@ -38,16 +54,6 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUY-MV-vwo">
-                                <rect key="frame" x="98.333333333333329" y="684" width="196.33333333333337" height="48"/>
-                                <color key="backgroundColor" systemColor="systemMintColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="5nl-LP-8JF"/>
-                                </constraints>
-                                <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Mood"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,9 +61,13 @@
                             <constraint firstItem="TCe-ZX-oJl" firstAttribute="top" secondItem="ZUY-MV-vwo" secondAttribute="bottom" constant="20" id="6En-Mo-cpE"/>
                             <constraint firstItem="ZUY-MV-vwo" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="9sK-hf-AG0"/>
                             <constraint firstItem="TCe-ZX-oJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A85-54-dKo"/>
+                            <constraint firstAttribute="bottom" secondItem="uYr-fe-aSw" secondAttribute="bottom" id="Dpn-hq-OFB"/>
                             <constraint firstAttribute="bottom" secondItem="TCe-ZX-oJl" secondAttribute="bottom" id="XAp-3s-hup"/>
+                            <constraint firstItem="uYr-fe-aSw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hlz-1l-zSf"/>
+                            <constraint firstAttribute="trailing" secondItem="uYr-fe-aSw" secondAttribute="trailing" id="n4o-mW-39x"/>
                             <constraint firstItem="ZUY-MV-vwo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKu-do-pFB"/>
                             <constraint firstAttribute="trailing" secondItem="TCe-ZX-oJl" secondAttribute="trailing" id="vFO-1S-ekA"/>
+                            <constraint firstItem="uYr-fe-aSw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xON-hr-3pR"/>
                         </constraints>
                     </view>
                     <connections>

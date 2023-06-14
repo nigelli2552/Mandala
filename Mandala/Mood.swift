@@ -24,4 +24,3 @@ extension Mood {
     static let sad = Mood(name: "sad", image: UIImage(resource: .sad), color: UIColor.sad)
     static let sleepy = Mood(name: "sleepy", image: UIImage(resource: .sleepy), color: UIColor.sleepy)
 }
-

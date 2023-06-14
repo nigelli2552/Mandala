@@ -55,5 +55,21 @@ class MoodSelectionViewController: UIViewController {
         moods = [.happy, .angry, .sad, .goofy, .crying, .confused, .sleepy, .meh]
         addMoodButton.layer.cornerRadius = addMoodButton.bounds.height / 2
     }
-}
 
+    var moodsConfigurable: MoodsConfigurable!
+
+    // MARK: View Lifecycle
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "embedContainerViewController":
+            guard let moodsConfigurable = segue.destination as? MoodsConfigurable else {
+                preconditionFailure(
+                    "View controller expected to conform to MoodsConfigurable")
+            }
+            self.moodsConfigurable = moodsConfigurable
+            segue.destination.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: 160, right: 0)
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
+}
