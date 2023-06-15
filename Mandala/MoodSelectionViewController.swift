@@ -72,4 +72,13 @@ class MoodSelectionViewController: UIViewController {
             preconditionFailure("Unexpected segue identifier")
         }
     }
+
+    // MARK: Actions
+    @IBAction func addMoodTapped(_ sender: Any) {
+        guard let curMood = curMood else {
+            return
+        }
+        let newMoodEntry = MoodEntry(mood: curMood, timestamp: Date())
+        moodsConfigurable.add(newMoodEntry)
+    }
 }
