@@ -14,6 +14,7 @@
 		263F7DC32A36F081006E1670 /* MoodEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F7DC22A36F081006E1670 /* MoodEntry.swift */; };
 		263F7DC72A36F0F9006E1670 /* MoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F7DC62A36F0F9006E1670 /* MoodListViewController.swift */; };
 		263F7DC92A3994E4006E1670 /* MoodsConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F7DC82A3994E4006E1670 /* MoodsConfigurable.swift */; };
+		263F7DCB2A3AE7A2006E1670 /* ImageSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F7DCA2A3AE7A2006E1670 /* ImageSelector.swift */; };
 		26C2A5D72A46A60A0084EC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A5D62A46A60A0084EC18 /* AppDelegate.swift */; };
 		26C2A5D92A46A60A0084EC18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C2A5D82A46A60A0084EC18 /* SceneDelegate.swift */; };
 		26C2A5DE2A46A60A0084EC18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C2A5DC2A46A60A0084EC18 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		263F7DC22A36F081006E1670 /* MoodEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntry.swift; sourceTree = "<group>"; };
 		263F7DC62A36F0F9006E1670 /* MoodListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodListViewController.swift; sourceTree = "<group>"; };
 		263F7DC82A3994E4006E1670 /* MoodsConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodsConfigurable.swift; sourceTree = "<group>"; };
+		263F7DCA2A3AE7A2006E1670 /* ImageSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelector.swift; sourceTree = "<group>"; };
 		26C2A5D32A46A60A0084EC18 /* Mandala.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mandala.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C2A5D62A46A60A0084EC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26C2A5D82A46A60A0084EC18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				26C2A5D82A46A60A0084EC18 /* SceneDelegate.swift */,
 				263F7DBA2A30533F006E1670 /* Mood.swift */,
 				263F7DC02A359EA6006E1670 /* MoodSelectionViewController.swift */,
+				263F7DCA2A3AE7A2006E1670 /* ImageSelector.swift */,
 				263F7DC82A3994E4006E1670 /* MoodsConfigurable.swift */,
 				263F7DC62A36F0F9006E1670 /* MoodListViewController.swift */,
 				263F7DC22A36F081006E1670 /* MoodEntry.swift */,
@@ -164,6 +167,7 @@
 				263F7DC32A36F081006E1670 /* MoodEntry.swift in Sources */,
 				263F7DC12A359EA6006E1670 /* MoodSelectionViewController.swift in Sources */,
 				263F7DBF2A305399006E1670 /* UIImage+Mandala.swift in Sources */,
+				263F7DCB2A3AE7A2006E1670 /* ImageSelector.swift in Sources */,
 				26C2A5D92A46A60A0084EC18 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
