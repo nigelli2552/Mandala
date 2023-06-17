@@ -8,25 +8,13 @@
 import UIKit
 
 class MoodSelectionViewController: UIViewController {
-    @IBOutlet var stackView: UIStackView!
+    @IBOutlet var moodSelector: ImageSelector!
     @IBOutlet var addMoodButton: UIButton!
 
     var moods: [Mood] = [] {
         didSet {
-            moodButtons = moods.map({ mood in
-                let moodButton = UIButton()
-                moodButton.setImage(mood.image, for: .normal)
-                moodButton.imageView?.contentMode = .scaleAspectFit
-                moodButton.addTarget(self, action: #selector(moodSelectionChanged(_:)), for: .touchUpInside)
-                return moodButton
-            })
-        }
-    }
-
-    var moodButtons: [UIButton] = [] {
-        didSet {
-            oldValue.forEach { $0.removeFromSuperview() }
-            moodButtons.forEach { stackView.addArrangedSubview($0) }
+            curMood = moods.first
+            moodSelector.images = moods.map { $0.image }
         }
     }
 
@@ -42,23 +30,15 @@ class MoodSelectionViewController: UIViewController {
         }
     }
 
-    @objc func moodSelectionChanged(_ sender: UIButton) {
-        guard let selectedIdx = moodButtons.firstIndex(of: sender) else {
-            preconditionFailure(
-                "Unable to find the tapped button in the buttons array.")
-        }
+    @IBAction private func moodSelectionChanged(_ sender: ImageSelector) {
+        let selectedIdx = sender.selectedIdx
         curMood = moods[selectedIdx]
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        moods = [.happy, .angry, .sad, .goofy, .crying, .confused, .sleepy, .meh]
-        addMoodButton.layer.cornerRadius = addMoodButton.bounds.height / 2
     }
 
     var moodsConfigurable: MoodsConfigurable!
 
-    // MARK: View Lifecycle
+    // MARK: - View lifecycle
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "embedContainerViewController":
@@ -73,7 +53,13 @@ class MoodSelectionViewController: UIViewController {
         }
     }
 
-    // MARK: Actions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        moods = [.happy, .angry, .sad, .goofy, .crying, .confused, .sleepy, .meh]
+        addMoodButton.layer.cornerRadius = addMoodButton.bounds.height / 2
+    }
+
+    // MARK: - Actions
     @IBAction func addMoodTapped(_ sender: Any) {
         guard let curMood = curMood else {
             return
