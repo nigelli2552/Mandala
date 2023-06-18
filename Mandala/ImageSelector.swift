@@ -28,7 +28,7 @@ class ImageSelector: UIControl {
         return stackView
     }()
 
-    var hightlighView: UIView = {
+    var highlightView: UIView = {
         let view = UIView()
         view.backgroundColor = view.tintColor
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,25 +56,38 @@ class ImageSelector: UIControl {
         }
     }
 
-    private var hightlightViewXConstrait: NSLayoutConstraint! {
+    private var highlightViewXConstrait: NSLayoutConstraint! {
         didSet {
             oldValue?.isActive = false
-            hightlightViewXConstrait.isActive = true
+            highlightViewXConstrait.isActive = true
         }
     }
 
     private func configureViewHierarchy() {
         addSubview(selectorStackView)
-        insertSubview(hightlighView, belowSubview: selectorStackView)
+        insertSubview(highlightView, belowSubview: selectorStackView)
         NSLayoutConstraint.activate([
             selectorStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             selectorStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             selectorStackView.topAnchor.constraint(equalTo: topAnchor),
             selectorStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            hightlighView.heightAnchor.constraint(equalTo: hightlighView.widthAnchor),
-            hightlighView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.9),
-            hightlighView.centerYAnchor.constraint(equalTo: selectorStackView.centerYAnchor),
+            highlightView.heightAnchor.constraint(equalTo: highlightView.widthAnchor),
+            highlightView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.9),
+            highlightView.centerYAnchor.constraint(equalTo: selectorStackView.centerYAnchor),
         ])
+    }
+
+    var highlightColors: [UIColor] = [] {
+        didSet {
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIdx)
+        }
+    }
+
+    private func highlightColor(forIndex index: Int) -> UIColor {
+        guard index >= 0 && index < highlightColors.count else {
+            return UIColor.blue.withAlphaComponent(0.6)
+        }
+        return highlightColors[index]
     }
 
     var selectedIdx = 0 {
@@ -86,7 +99,9 @@ class ImageSelector: UIControl {
                 selectedIdx = images.count - 1
             }
             let imageButton = imageButtons[selectedIdx]
-            hightlightViewXConstrait = hightlighView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor)
+            highlightViewXConstrait = highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor)
+
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIdx)
         }
     }
 
@@ -108,6 +123,6 @@ class ImageSelector: UIControl {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        hightlighView.layer.cornerRadius = hightlighView.bounds.width / 2.0
+        highlightView.layer.cornerRadius = highlightView.bounds.width / 2.0
     }
 }

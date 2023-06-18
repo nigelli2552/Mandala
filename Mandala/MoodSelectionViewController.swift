@@ -15,6 +15,7 @@ class MoodSelectionViewController: UIViewController {
         didSet {
             curMood = moods.first
             moodSelector.images = moods.map { $0.image }
+            moodSelector.highlightColors = moods.map { $0.color }
         }
     }
 
@@ -37,8 +38,7 @@ class MoodSelectionViewController: UIViewController {
 
     var moodsConfigurable: MoodsConfigurable!
 
-    // MARK: - View lifecycle
-
+    // MARK: - View Lifecycle
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "embedContainerViewController":
