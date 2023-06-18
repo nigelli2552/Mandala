@@ -95,7 +95,14 @@ class ImageSelector: UIControl {
         guard let buttonIdx = imageButtons.firstIndex(of: sender) else {
             preconditionFailure("The buttons and images are not parallel.")
         }
-        selectedIdx = buttonIdx
+        let selectionAnimator = UIViewPropertyAnimator(
+            duration: 0.3,
+            curve: .easeInOut,
+            animations: {
+                self.selectedIdx = buttonIdx
+                self.layoutIfNeeded()
+            })
+        selectionAnimator.startAnimation()
         sendActions(for: .valueChanged)
     }
 
