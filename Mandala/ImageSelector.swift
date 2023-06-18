@@ -97,7 +97,7 @@ class ImageSelector: UIControl {
         }
         let selectionAnimator = UIViewPropertyAnimator(
             duration: 0.3,
-            curve: .easeInOut,
+            dampingRatio: 0.7,
             animations: {
                 self.selectedIdx = buttonIdx
                 self.layoutIfNeeded()
